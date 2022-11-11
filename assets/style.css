@@ -61,7 +61,7 @@ section .container h2 span.text4 {
     filter: hue-rotate(180deg);
 }
 section .container h2 span.text5 {
-    animation-delay: 2.5s;
+    animation-delay: -2.5s;
     filter: hue-rotate(90deg);
 }
 
