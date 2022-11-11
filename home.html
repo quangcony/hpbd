@@ -10,12 +10,12 @@
   </head>
   <body>
     <section>
-        <div>
-            <audio autoplay loop>
-                <source src="audio/hppd.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+      <div>
+        <audio loop id="audio">
+          <source src="audio/hppd.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
       <div class="container">
         <h2>pwhscws4d★5wfrfshsw48d5aav3hjk</h2>
         <h2>rhx<span class="text4">H</span>sg46sacxcptrhxmsg46a<span class="text5">2022★</span>s</h2>
@@ -104,6 +104,7 @@
 
       </div>
     </section>
+    <div class="btn-sound" title="mute/unmute" style="background-image: url('img/mute.png') ;"></div>
     <div class="show" id="show-popup" style="background-image: url('img/haivan.jpg');"></div>
   
     <script type="text/javascript">
@@ -113,10 +114,9 @@
           const elem = document.documentElement;
           const divs = document.querySelectorAll('.imgs-thumb div')
           const mainImg = document.querySelector('.main-img')
+          const btnSound = document.querySelector('.btn-sound')
+          const audio = document.querySelector('#audio');
 
-          setTimeout(() => {
-            document.getElementById('audio').play()
-          }, 100);
           // setTimeout(() => {
           //   popup.classList.remove('active')
           //   popup.classList.add('active')
@@ -129,9 +129,15 @@
           //   popup.classList.remove('active')
           //   // openFullscreen()
           // })
-          window.addEventListener('load', (event) => {
-            document.getElementsByTagName('audio').play
-          });
+          btnSound.addEventListener('click', () => {
+            if(audio.paused) {
+                audio.play()
+                btnSound.style.backgroundImage = "url('img/volume.png')"
+            }else {
+                audio.pause()
+                btnSound.style.backgroundImage = "url('img/mute.png')"
+            }
+          })
           show.addEventListener('click', () => {
             openFullscreen()
             popup.classList.toggle('active')

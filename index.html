@@ -13,10 +13,18 @@
         }
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             background-color: #222;
+        }
+        .btn-sound {
+            width: 40px;
+            height: 40px;
+            background-repeat: no-repeat;
+            filter: invert(1);
+            cursor: pointer;
         }
         .clock {
             width: auto;
@@ -55,20 +63,29 @@
 </head>
 <body>
     <div>
-        <audio autoplay loop id="audio">
+        <audio loop id="audio">
             <source src="audio/tichtock.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
     </div>
+    <div class="btn-sound" title="mute/unmute" style="background-image: url('img/mute.png') ;"></div>
     <div class="clock"></div>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="assets/flipclock.js"></script>
     <script type="text/javascript">
-        setTimeout(() => {
-            document.getElementById('audio').play()
-        }, 100);
+        const btnSound = document.querySelector('.btn-sound')
+        const audio = document.querySelector('#audio');
         var clock = $('.clock').FlipClock({
             clockFace: 'TwentyFourHourClock',
+        })
+        btnSound.addEventListener('click', () => {
+            if(audio.paused) {
+                audio.play()
+                btnSound.style.backgroundImage = "url('img/volume.png')"
+            }else {
+                audio.pause()
+                btnSound.style.backgroundImage = "url('img/mute.png')"
+            }
         })
         setInterval(() => {
             const date = new Date();
