@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/flipclock.css">
+    <title>Countdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #222;
+        }
+        .clock {
+            width: auto;
+        }
+        @media only screen and (min-width: 1024px) {
+            .flip-clock-wrapper ul {
+            width: 150px;
+            height: 180px;
+            }
+            .flip-clock-wrapper ul li a div div.inn {
+                font-size: 160px;
+                line-height: 180px;
+            }
+            .flip-clock-wrapper ul li a div.up:after {
+                top: 85px;
+            }
+            .flip-clock-divider {
+                height: 180px;
+            }
+            .flip-clock-dot.top {
+                top: 60px;
+            }
+            .flip-clock-dot.bottom {
+                bottom: 60px;
+            }
+        }
+        
+        .flip-clock-dot {
+            background-color: #ccc;
+        }
+        .flip-clock-meridium a {
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <audio autoplay loop>
+            <source src="audio/tichtock.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div class="clock"></div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="assets/flipclock.js"></script>
+    <script type="text/javascript">
+        var clock = $('.clock').FlipClock({
+            clockFace: 'TwentyFourHourClock',
+        })
+        setInterval(() => {
+            const date = new Date();
+            if(date.getHours() === 0)
+                window.location="index.html";
+        }, 1000);
+    </script>
+</body>
+</html>
