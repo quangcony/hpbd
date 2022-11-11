@@ -54,7 +54,6 @@
     </style>
 </head>
 <body>
-
     <div>
         <iframe src="audio/silence.mp3" allow="autoplay" style="display: none"></iframe>
         <audio autoplay loop>
@@ -66,6 +65,9 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="assets/flipclock.js"></script>
     <script type="text/javascript">
+        $(function() {
+            $('audio').play()
+        });
         var clock = $('.clock').FlipClock({
             clockFace: 'TwentyFourHourClock',
         })

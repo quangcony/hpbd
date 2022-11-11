@@ -84,7 +84,7 @@
               <div>
                 <img src="img/9.jpg" alt="hom nay la mot ngay dac biet!">
               </div>
-              <div>
+               <div>
                 <img src="img/10.jpg" alt="<strong>0383465492</strong> - CK Momo nha!">
               </div>
               <div>
@@ -127,6 +127,9 @@
           //   popup.classList.remove('active')
           //   // openFullscreen()
           // })
+          window.addEventListener('load', (event) => {
+            document.getElementsByTagName('audio').play()
+          });
           show.addEventListener('click', () => {
             openFullscreen()
             popup.classList.toggle('active')
