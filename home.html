@@ -11,7 +11,6 @@
   <body>
     <section>
         <div>
-            <iframe src="audio/silence.mp3" allow="autoplay" hidden></iframe>
             <audio autoplay loop>
                 <source src="audio/hppd.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
@@ -115,6 +114,9 @@
           const divs = document.querySelectorAll('.imgs-thumb div')
           const mainImg = document.querySelector('.main-img')
 
+          setTimeout(() => {
+            document.getElementById('audio').play()
+          }, 100);
           // setTimeout(() => {
           //   popup.classList.remove('active')
           //   popup.classList.add('active')
@@ -128,7 +130,7 @@
           //   // openFullscreen()
           // })
           window.addEventListener('load', (event) => {
-            document.getElementsByTagName('audio').play()
+            document.getElementsByTagName('audio').play
           });
           show.addEventListener('click', () => {
             openFullscreen()

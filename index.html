@@ -55,8 +55,7 @@
 </head>
 <body>
     <div>
-        <iframe src="audio/silence.mp3" allow="autoplay" style="display: none"></iframe>
-        <audio autoplay loop>
+        <audio autoplay loop id="audio">
             <source src="audio/tichtock.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -65,9 +64,9 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="assets/flipclock.js"></script>
     <script type="text/javascript">
-        $(function() {
-            $('audio').play()
-        });
+        setTimeout(() => {
+            document.getElementById('audio').play()
+        }, 100);
         var clock = $('.clock').FlipClock({
             clockFace: 'TwentyFourHourClock',
         })
