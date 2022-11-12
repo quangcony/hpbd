@@ -63,7 +63,7 @@
 </head>
 <body>
     <div>
-        <audio loop id="audio">
+        <audio autoplay muted loop id="audio">
             <source src="audio/tichtock.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -79,18 +79,18 @@
             clockFace: 'TwentyFourHourClock',
         })
         btnSound.addEventListener('click', () => {
-            if(audio.paused) {
-                audio.play()
+            if(audio.muted) {
+                audio.muted = false
                 btnSound.style.backgroundImage = "url('img/volume.png')"
             }else {
-                audio.pause()
+                audio.muted = true
                 btnSound.style.backgroundImage = "url('img/mute.png')"
             }
         })
         setInterval(() => {
             const date = new Date();
             if(date.getHours() === 0)
-                window.location="index.html";
+                window.location="home.html";
         }, 1000);
     </script>
 </body>

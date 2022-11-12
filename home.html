@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="assets/style.css" />
     <title>Happy birthday to you!</title>
@@ -11,14 +11,14 @@
   <body>
     <section>
       <div>
-        <audio loop id="audio">
+        <audio autoplay muted loop id="audio">
           <source src="audio/hppd.mp3" type="audio/mp3">
           Your browser does not support the audio element.
         </audio>
       </div>
       <div class="container">
         <h2>pwhscws4d★5wfrfshsw48d5aav3hjk</h2>
-        <h2>rhx<span class="text4">H</span>sg46sacxcptrhxmsg46a<span class="text5">2022★</span>s</h2>
+        <h2>rhx<span class="text4">H</span>sg46sacxcptrhxms<span class="text5">2022★</span>g46as</h2>
         <h2>jas<span class="text4">A</span>sdvjas8sdv<span>T</span>dssdse3dssdse★3</h2>
         <h2>sda<span class="text4">P</span>84gjkj<span class="text2">To</span>4a<span>R</span>s5c<span class="text5">11</span>sws5c2★1sw</h2>
         <h2>d8w<span class="text4">P</span>nvdd8wqnvd<span>A</span>s83s52ds★83s52d</h2>
@@ -55,15 +55,15 @@
           <div class="box-content">
             <div class="main-img" data-index="0" style="background-image: url('img/2.jpg');">
               <div class="wish">
-                Chuc mung sinh nhat!
+                Hi, Chuc mung sinh nhat!
               </div>
             </div>
             <div class="imgs-thumb">
               <div class="active">
-                <img src="img/2.jpg" alt="Chuc mung sinh nhat!">
+                <img src="img/2.jpg" alt="Hi, Chuc mung sinh nhat!">
               </div>
               <div>
-                <img src="img/3.jpg" alt="Toi chuc bro tuoi moi that nhieu suc khoe va niem vui trong cuoc song!">
+                <img src="img/3.jpg" alt="Toi chuc cho tuoi moi that nhieu suc khoe va niem vui trong cuoc song!">
               </div>
               <div>
                 <img src="img/4.jpg" alt="Di den duoc nhung noi muon den!">
@@ -78,13 +78,13 @@
                 <img src="img/7.jpg" alt="Duoc moi nguoi yeu thuong nhieu hon nua!">
               </div>
               <div>
-                <img src="img/8.jpg" alt="Khong duoc yeu duoi, manh me len nha!">
+                <img src="img/8.jpg" alt="Khong duoc yeu duoi, manh me len!">
               </div>
               <div>
                 <img src="img/9.jpg" alt="hom nay la mot ngay dac biet!">
               </div>
                <div>
-                <img src="img/10.jpg" alt="<strong>0383465492</strong> - CK Momo nha!">
+                <img src="img/10.jpg" alt="<strong>0383465492</strong> -> CK Momo nha!">
               </div>
               <div>
                 <img src="img/11.jpg" alt="<span style='font-size: 2rem'>😆😆🥲 (n_n)</span> ">
@@ -96,7 +96,7 @@
                 <img src="img/13.jpg" alt="<span style='font-size: 2rem'>🤣🤭🥳️</span>">
               </div>
                <div>
-                <img src="img/14.jpg" alt="Hen gap lai mot ngay gan nhat!">
+                <img src="img/14.jpg" alt="Hen gap lai mot ngay khong xa!">
               </div>
             </div>
           </div>
@@ -130,11 +130,11 @@
           //   // openFullscreen()
           // })
           btnSound.addEventListener('click', () => {
-            if(audio.paused) {
-                audio.play()
+            if(audio.muted) {
+                audio.muted = false
                 btnSound.style.backgroundImage = "url('img/volume.png')"
             }else {
-                audio.pause()
+                audio.muted = true
                 btnSound.style.backgroundImage = "url('img/mute.png')"
             }
           })
