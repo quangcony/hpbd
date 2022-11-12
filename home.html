@@ -11,7 +11,7 @@
   <body>
     <section>
       <div>
-        <audio autoplay muted loop id="audio">
+        <audio loop id="audio">
           <source src="audio/hppd.mp3" type="audio/mp3">
           Your browser does not support the audio element.
         </audio>
@@ -130,11 +130,11 @@
           //   // openFullscreen()
           // })
           btnSound.addEventListener('click', () => {
-            if(audio.muted) {
-                audio.muted = false
+            if(audio.paused) {
+                audio.play()
                 btnSound.style.backgroundImage = "url('img/volume.png')"
             }else {
-                audio.muted = true
+                audio.pause()
                 btnSound.style.backgroundImage = "url('img/mute.png')"
             }
           })
